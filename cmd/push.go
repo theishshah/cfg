@@ -40,4 +40,5 @@ var pushCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(pushCmd)
+	pushCmd.Flags().BoolVarP(&cfg.Force, "force", "f", false, "force push")
 }

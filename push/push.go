@@ -35,7 +35,7 @@ func Push(cfg Config) {
 		remote = cfg.Remote
 	}
 	remoteValue, ok := keyFile.Remotes[remote]
-	if !ok {
+	if !ok && !cfg.Force {
 		fmt.Fprintf(os.Stderr, "error: %v is not a remote\n", remote)
 		os.Exit(1)
 	}
